@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="{% url 'listar_cursos' %}">
+
+    <label for="">Nome <a href="criar_curso.html"></a> </label>
+    <input type="text" name="nome_filtrar" class="form-control">
+
+
+    <input style="border-radius: 5px; color: white; background-color: rgb(19, 107, 73);" type="submit" value="Filtrar" class="btn btn-sucess">
+
+    </form>
+
+
+    <h1>Listando os cursos</h1>
+    <hr>
+    
+    {% for i in cursos %}
+<h3>Nome: {{i.nome}} </h3>
+<h4>Carga Horária: {{i.carga_horaria}} </h4>
+<hr>
+    {% endfor %}
+            
+</body>
+</html>
+

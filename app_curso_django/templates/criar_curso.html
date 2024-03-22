@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Escolha seu curso.</h1>
+
+
+    {% if status == '1' %}
+    <div style="background-color: green; height: 20px; width: 250px; font-size: 16px; align-items: center; padding: 10px; border-radius: 5px; justify-content: center; "
+        class="alert alert-success" role="alert">
+        Dados enviados com SUCESSO!
+    </div>
+
+    {% endif %}
+
+    <hr>
+
+    <form style="display: flex; flex-direction: column; gap: 5px;" action="/curso/criar_curso/" method="post">
+
+        {% csrf_token %}
+
+        <label for="">Nome do curso:</label>
+        <input name="nome" type="text" class="form-control">
+
+        <label for="">Carga horária:</label>
+        <input name="carga_horaria" type="number" class="form-control">
+
+        <input type="submit" value="Enviar">
+
+    </form>
+
+</body>
+
+</html>
